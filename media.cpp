@@ -1,91 +1,69 @@
-
-#include "student.h"
-#include "date.h"
-#include "media.h"
-
+// Member_functions definitions for class Media "implementation"
 #include <iostream>
 #include <string>
-
-
+#include "Media.h"  // // include definition of class Media
+#include "student.h"  // include definition of class Student
+#include "Date.h"   // include definition of class Date
 using namespace std;
-//////////////////////////////////////
-int siz=0;student s[];date d[];
-media::media(string a,string b,int v,int z)
-{NoOfCopies=v;
- name=a;
-ISBN=b;
-CopiesAvailable=z;
-}
-void media::setno(int n){NoOfCopies=n; }  
-void media::setCopiesAvailable(){int a;
-  cout <<"HOW many books do u want to take"<<endl;
-	cin>>a;
-	if (a>0&&a<=2){
-	CopiesAvailable-=a;
-	setno(a);
-	getCopiesAvailable();
-	}
-	else {
-		cout<<"u can't bowrow mor thant 2 books reinput the number "<<endl;
-		cin>>a;}
-}
-int media::getno(){return NoOfCopies;}
-void media::getCopiesAvailable(){
-	cout<<"the total book u can bowrow now is";
-	cout<< CopiesAvailable<<endl;
-if ( CopiesAvailable==0)
-cout<<"u can't bowrrow any book"<<endl;}
+///////////////////////////
+int size1=0;
+Student s[];Date d[];
+Media::Media( )
+	: name(" "),
+	ISBN(" "),
+	NoOfCopies(2),
+	CopiesAvailable(2)
+{
+                       }
 
-void media::setbookname(){string a;
-	cout <<"enter the book name"<<endl;
-cin>>a;
-name=a;}
-void media::setisbn(){string a;
-	cout <<"enter the ISBN"<<endl;
-cin>>a;
-ISBN=a;
-siz++;
-}
-string  media::getbookname(){return name;}
-string  media::getisbn(){return ISBN;}
-void media:: Borrow(void){
-	int i;
+Media::Media(string n ,string c ,int a ,Student [],Date [])
+	: name( n ),
+	ISBN( c ),
+	CopiesAvailable( a )
+{
+                        }
+
+void Media::Borrow(void){
+	int a,i;
+	// You should check here if "CopiesAvailable" is not zero!
 	
-	for (i=0;i<2;i++){
-		
-BorrowDate[i].setDay(i);
-BorrowDate[i].setMonth(i);
-BorrowDate[i].setYear(i);	}
+	Student student;
+	student.AddStudent();
+	size1++;
+	for(i=0;i<size1;i++)
+	s[i].Increament();
+	if (CopiesAvailable!=0&&CopiesAvailable>-1){
+	a=	CopiesAvailable-1;
+	setCopiesAvailable(a);
+	Borrower[1-CopiesAvailable]=student;}
+	else 
+		cout <<"u can't borrow any books"<<endl;
+	
+	}
 
-}
 
-void media:: Return(void){
-	string emp;int j;
-	cout<<"enter ur  first name"<<endl;
-		cin>>emp;
-	cout<<"how many book do u want to return"<<endl;
-	cin>>j;
-  for(int i=0;i<siz;i++)
-      {
-          if (Borrower[i].name==emp)
-                  
-             // set the value of the last entries of all the arrays to null
-                 Borrower[i]. setname('\0');//last first name
-                 Borrower[i].setdep('\0');
-			   BorrowDate[i].setDay('\0');
-			   BorrowDate[i].setMonth('\0');
-			   BorrowDate[i].setYear('\0');
-			   Borrower[i]= Borrower[i+1];}
-			student s;
-			s.setNoOfBorrowedBooks(j);}
+void Media:: Return(){string fn;int i;
 
-void media:: PrintInfo(void){student s[100];
-for(int i=0;i<siz;i++){
-	s[i].display();
-	cout<<"you take "<<getno()<<" books"<<endl;
-	d[i].printDate();
-}
+	cout<<"enter your first name"<<endl;
+	cin>>fn;
+	for ( i=0;i<size1;i++){
+	if (s[i]==fn)
+		s[i].setName('\0');
+	    s[i].setID(0);
+		s[i].setDeparName('\0');
+		s[i]=s[i+1];
 
-}
+	}}
+void  Media ::PrintInfo(void){int i;
+	for(i=0;i<size1;i++){
+		s[i].Print();
+		d[i].printDate();}}
+
+
+
+
+
+
+
 
 
