@@ -5,8 +5,9 @@
 #include "student.h"  // include definition of class Student
 #include "Date.h"   // include definition of class Date
 using namespace std;
-
+///////////////////////////
 int size1=0;
+Student s[];Date d[];
 Media::Media( )
 	: name(" "),
 	ISBN(" "),
@@ -15,7 +16,7 @@ Media::Media( )
 {
                        }
 
-Media::Media(string n ,string c ,int a ,Student[],Date[])
+Media::Media(string n ,string c ,int a ,Student [],Date [])
 	: name( n ),
 	ISBN( c ),
 	CopiesAvailable( a )
@@ -23,13 +24,14 @@ Media::Media(string n ,string c ,int a ,Student[],Date[])
                         }
 
 void Media::Borrow(void){
-	int a;
+	int a,i;
 	// You should check here if "CopiesAvailable" is not zero!
 	
 	Student student;
 	student.AddStudent();
 	size1++;
-	student.Increament();
+	for(i=0;i<size1;i++)
+	s[i].Increament();
 	if (CopiesAvailable!=0&&CopiesAvailable>-1){
 	a=	CopiesAvailable-1;
 	setCopiesAvailable(a);
@@ -40,22 +42,22 @@ void Media::Borrow(void){
 	}
 
 
-void Media:: Return(){string fn;
+void Media:: Return(){string fn;int i;
 
 	cout<<"enter your first name"<<endl;
 	cin>>fn;
-	for (int i;i<size1;i++){
-	if (student[i]==fn)
-		student[i].setName('\0');
-	    student[i].setID(0);
-		student[i].setDeparName('\0');
-		student[i]=student[i+1];
+	for ( i=0;i<size1;i++){
+	if (s[i]==fn)
+		s[i].setName('\0');
+	    s[i].setID(0);
+		s[i].setDeparName('\0');
+		s[i]=s[i+1];
 
 	}}
 void  Media ::PrintInfo(void){int i;
 	for(i=0;i<size1;i++){
-		student[i].Print();
-		Date[i].printDate();}}
+		s[i].Print();
+		d[i].printDate();}}
 
 
 
