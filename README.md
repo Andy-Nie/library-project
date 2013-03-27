@@ -23,6 +23,19 @@ The menu will be something like this:
 8.	RETURN BOOK.
 9.	EXIT.
 
+Prerequisites
+-------------
+
+* Install CMake - See http://www.cmake.org/cmake/resources/software.html
+* C++ compiler
+
+Build instuction
+----------------
+
+1. Download source: `git clone git://github.com/RashaNabil/library-project.git`
+2. Generate solution file (VisualStudio, Makefile, ...) using CMake.
+3. Build project
+
 Known issues
 ------------
 
