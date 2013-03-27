@@ -1,7 +1,11 @@
-#include<iostream>
+
+#include "student.h"
+
+#include <cstdlib>
+#include <iostream>
 #include <string>
-#include"student.h"
-#include<cstdlib>
+
+
 using namespace std;
 /////////////////////////////////////////
  int size1=43200555;//size1  for ID

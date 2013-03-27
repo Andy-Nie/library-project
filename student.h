@@ -1,7 +1,9 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-#include<iostream>
+
+#include <iostream>
 #include <string>
+
 using namespace std;
 class student{
 private:
@@ -20,4 +22,6 @@ public:
 	void add();
 	void display();
 };
+
 #endif
+

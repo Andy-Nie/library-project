@@ -1,8 +1,12 @@
-#include"student.h"
-#include"date.h"
-#include"media.h"
-#include<iostream>
+
+#include "date.h"
+#include "media.h"
+#include "student.h"
+
+#include <cstdlib>
+#include <iostream>
 #include <string>
+
 using namespace std;
 int size=0;
 int main(){int n,num=0;
@@ -52,3 +56,4 @@ student nm[100],b[100] ;media m[100];date d[100];
 	system ("pause");
 	return 0;
 }
+

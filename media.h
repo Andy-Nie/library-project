@@ -1,8 +1,11 @@
 #ifndef MEDIA_H
 #define MEDIA_H
-#include <string>
-#include "student.h"
+
 #include "date.h"
+#include "student.h"
+
+#include <string>
+
 class media
 {
 private:

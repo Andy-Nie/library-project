@@ -1,5 +1,8 @@
-#include<iostream>
+
 #include "date.h"
+
+#include <iostream>
+
 using namespace std;
 date::date(int d , int m , int y){
  day=d;
@@ -23,3 +26,4 @@ void date::dat(){int b,s,d;
 	setYear(d);}
 void date:: printDate(){
 	cout <<"u bowrow the book on "<<'\t'<<getDay()<<"/"<<getMonth()<<"/"<<getYear()<<endl;}
+

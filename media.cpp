@@ -1,8 +1,12 @@
-#include<iostream>
-#include <string>
+
 #include "student.h"
 #include "date.h"
-#include"media.h"
+#include "media.h"
+
+#include <iostream>
+#include <string>
+
+
 using namespace std;
 //////////////////////////////////////
 int siz=0;student s[];date d[];
@@ -55,34 +59,33 @@ BorrowDate[i].setYear(i);	}
 
 }
 
-	void media:: Return(void){
-		string emp;int j;
-		cout<<"enter ur  first name"<<endl;
-			cin>>emp;
-		cout<<"how many book do u want to return"<<endl;
-		cin>>j;
-    for(int i=0;i<siz;i++)
-        {
-            if (Borrower[i].name==emp)
-                    
-               // set the value of the last entries of all the arrays to null
-                   Borrower[i]. setname('\0');//last first name
-                   Borrower[i].setdep('\0');
-				   BorrowDate[i].setDay('\0');
-				   BorrowDate[i].setMonth('\0');
-				   BorrowDate[i].setYear('\0');
-				   Borrower[i]= Borrower[i+1];}
-				student s;
-				s.setNoOfBorrowedBooks(j);}
-	
-	void media:: PrintInfo(void){student s[100];
-	for(int i=0;i<siz;i++){
-		s[i].display();
-		cout<<"you take "<<getno()<<" books"<<endl;
-		d[i].printDate();
+void media:: Return(void){
+	string emp;int j;
+	cout<<"enter ur  first name"<<endl;
+		cin>>emp;
+	cout<<"how many book do u want to return"<<endl;
+	cin>>j;
+  for(int i=0;i<siz;i++)
+      {
+          if (Borrower[i].name==emp)
+                  
+             // set the value of the last entries of all the arrays to null
+                 Borrower[i]. setname('\0');//last first name
+                 Borrower[i].setdep('\0');
+			   BorrowDate[i].setDay('\0');
+			   BorrowDate[i].setMonth('\0');
+			   BorrowDate[i].setYear('\0');
+			   Borrower[i]= Borrower[i+1];}
+			student s;
+			s.setNoOfBorrowedBooks(j);}
 
-	}}
+void media:: PrintInfo(void){student s[100];
+for(int i=0;i<siz;i++){
+	s[i].display();
+	cout<<"you take "<<getno()<<" books"<<endl;
+	d[i].printDate();
+}
 
-
+}
 
 
