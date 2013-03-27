@@ -1,23 +1,38 @@
+// student class "Interface"
+// create Student Class definition
 #ifndef STUDENT_H
 #define STUDENT_H
-#include<iostream>
+
 #include <string>
 using namespace std;
-class student{
-private:
-  string  deparname;
-	int NoOfBorrowedBooks;
-int ID ;
+
+class Student // Data class definition
+{
+
 public:
+	Student( int = 0, string =" ", string =" " ); // defualt constructor
+
+	// set functions prototypes
+	void setID( int );
+	void setName( string );
+	void setDeparName( string );
+
+	// get functions prototypes
+	int getID();
+	string getName();
+	string getDeparName();
+
+	void AddStudent( );// function to add new student 
+	void Increament( );
+	void Print( );// function to display the details of the students
+
+private:
+	int ID;
 	string name;
-	student (string ="" ,string=" " ,int =0,int =0);//constructor with defult argument
-	void setname(string);
-	void setdep(string);
-	void setNoOfBorrowedBooks(int);
-	string getname();
-	string getdep();
-	int getid();
-	void add();
-	void display();
-};
-#endif
+	string departname;
+	int NoOfBorrowedBooks;
+
+}; //end class Student
+#endif 
+
+
