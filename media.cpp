@@ -1,6 +1,6 @@
 #include<iostream>
 #include <string>
-#include "Student.h"
+#include "student.h"
 #include "date.h"
 #include"media.h"
 using namespace std;

@@ -1,7 +1,7 @@
 #ifndef MEDIA_H
 #define MEDIA_H
 #include <string>
-#include "Student.h"
+#include "student.h"
 #include "date.h"
 class media
 {
