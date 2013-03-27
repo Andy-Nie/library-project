@@ -1,45 +1,87 @@
-#include<iostream>
+// Member_functions definitions for class Student "implementation"
+#include <iostream>
+#include <cstdlib>
 #include <string>
-#include"student.h"
-#include<cstdlib>
+#include <iomanip>
+#include "student.h"  // include definition of class Student
 using namespace std;
-/////////////////////////////////////////
- int size1=43200555;//size1  for ID
 
-student::student  (string n, string de ,int id,int num){setname(n);setdep(de);ID=id;setNoOfBorrowedBooks(num);}
 
-void student::setname(string n){name=n;  }
 
-void student::setdep(string d){deparname=d;}
+Student::Student( int i, string nam, string dep )
+{
+	setID( i );
+	setName( nam );
+	setDeparName( dep );
+	NoOfBorrowedBooks=0;
+}// end Student constructor
 
-void student::setNoOfBorrowedBooks(int a){NoOfBorrowedBooks-=a;}
 
-string student::getname(){return name;}
 
-string student::getdep(){return deparname; }
-
-int student:: getid(){if (ID==0)
-{const int i=size1++;
-return i;}}
-
-void student::add(){
-	string na,dep;int no=0;
-	cout<<"enter name"<<endl;
-			cin>>na;
-			setname(na);
-			cout<<"enterDepartment"<<endl;
-			cin>>dep;
-			setdep(dep);
-NoOfBorrowedBooks++;
+void Student::setID(int i)
+{
+	if(ID==0)
+		while(ID=0)
+			ID = rand() % 100;
+			
 }
-void student ::display(){
 
-	cout<<"name\t department\t ID"<<endl;
-	
-		cout<<getname()<<'\t'<<'\t'<<getdep()<<'\t'<<getid()<<endl;}
-	
+void Student::setName( string wordN )
+{
+	name = wordN;
 
+}
 
+void Student::setDeparName( string wordD )
+{
+	departname = wordD;
+}
 
+int Student::getID( )
+{
+	return ID;
+}
+
+string Student::getName( )
+{
+	return name;
+}
+
+string Student::getDeparName( )
+{
+	return departname;
+}
+
+// start ADD fuction
+void Student::AddStudent(  ) 
+{
+	string wordN, wordD;
+
+	cout<<"Two books allowed to each student \n\n";
+	cout<<"Enter the student's name : \n";
+	getline( cin, wordN );
+	setName( wordN );
+	cout<<"Enter the Department name : \n";
+	getline( cin, wordD );
+	setDeparName( wordD );
+
+}// end ADD function
+
+// start Increament fuction
+void Student::Increament( )
+{
+	NoOfBorrowedBooks+=1;
+}// end 
+
+// start Print fuction
+void Student::Print( )
+{
+	cout<<"\n******** STUDENT INFO ********\n\n";
+	cout<<" ID         : "<<"\t"<<getID()<<endl;
+	cout<<" Name       : "<<"\t"<<getName()<<endl;
+	cout<<" Department : "<<"\t"<<getDeparName()<<endl;
+	cout<<"\n****************************\n"<<endl;
+
+}// end print function
 
 
