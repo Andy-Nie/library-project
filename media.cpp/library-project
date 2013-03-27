@@ -5,9 +5,11 @@
 #include "student.h"  // include definition of class Student
 #include "Date.h"   // include definition of class Date
 using namespace std;
-///////////////////////////
+/////////////////////
 int size1=0;
 Student s[];Date d[];
+///////////////////////////
+
 Media::Media( )
 	: name(" "),
 	ISBN(" "),
@@ -27,15 +29,15 @@ void Media::Borrow(void){
 	int a,i;
 	// You should check here if "CopiesAvailable" is not zero!
 	
-	Student student;
-	student.AddStudent();
+	for(i=0;i<size1;i++)
+	s[i].AddStudent();
 	size1++;
 	for(i=0;i<size1;i++)
 	s[i].Increament();
 	if (CopiesAvailable!=0&&CopiesAvailable>-1){
 	a=	CopiesAvailable-1;
 	setCopiesAvailable(a);
-	Borrower[1-CopiesAvailable]=student;}
+	Borrower[1-CopiesAvailable]=s[i];}
 	else 
 		cout <<"u can't borrow any books"<<endl;
 	
