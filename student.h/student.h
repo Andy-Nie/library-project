@@ -23,7 +23,8 @@ public:
 	string getDeparName();
 
 	void AddStudent( );// function to add new student 
-	void Increament( );
+	void Increment( );
+	void Decrement( );
 	void Print( );// function to display the details of the students
 
 private:
