@@ -11,8 +11,7 @@ class Media
 {
 public:
 	Media(void); // defualt constructor
-	Media(string ,string);
-	Media(string,string,int,Student[],Date[]); // constructor with parameter
+	Media(string, string); // constructor with parameter
 	void Borrow(Student &, Date & ); 
 	void Return(Student &s);
 	void PrintInfo(void);// displays all information
