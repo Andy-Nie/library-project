@@ -8,30 +8,32 @@ using namespace std;
 
 Media::Media( )
 	: name(" "),
-	ISBN(" "),
+	ISBN(" "), 
 	NoOfCopies(2),
 	CopiesAvailable(2)
 {
-                       }
+                       }// end Media constructor
 
-//######################################//
-Media::Media(string n ,string c){/////////////////////////////////// better than * 
-	name=n;
-	ISBN=c;
-}
-
-Media::Media(string n ,string c ,int a ,Student[],Date[]) ////////////// *this
+Media::Media(string n, string c)
 	: name( n ),
 	ISBN( c ),
-	CopiesAvailable( a )
-{
-                        }
+	NoOfCopies(2),
+	CopiesAvailable(2)
 
-void Media::Borrow(Student &s, Date &d){
+{                        }// end Media constructor
+
+void Media::Borrow(Student &s, Date &d)
+{
+	if( CopiesAvailable != 0 )
+	{
 	s.Increment();
 	CopiesAvailable--;
 	Borrower[1-CopiesAvailable]=s;
 	BorrowDate[1-CopiesAvailable]=d;
+	}
+	else
+		cout<<"Sorry, No Copies Available \n"; 
+	return;
 }// end function Borrow
 
 void Media::Return(Student &s ){
@@ -39,27 +41,35 @@ void Media::Return(Student &s ){
 	int rm1=r-1;//new varible to stop the loop befor the last entry in the array
 
 for (int i=0; i<r; i++){
-		if ( Borrower[i] == s ){
+		if ( Borrower[i].getID() == s.getID() && Borrower[i].getID()!=0){
 			
 			for ( int k=i; k<rm1; k++ ){// shifting loop
 				Borrower[k]=Borrower[k+1];
 				BorrowDate[k]=BorrowDate[k+1];
 			}// end shifting loop
 			// set the value of the last entries of all the arrays = null
-			Borrower[rm1]='\0';
-			BorrowDate[rm1]='\0';
+			Student emptyStu;
+			Date emptyDate;
+			Borrower[rm1] = emptyStu;
+			BorrowDate[rm1]= emptyDate;
 
 			CopiesAvailable++;
 			s.Decrement();
 		}
-	}
+		else
+		cout<<"Does not exist \n";
 	return; // if there is no name matches the search key
+	}// end loop
 }// end function Return
 
 void Media::PrintInfo( ){
-	cout<<"Student borrowers \t Date \n";
-	for( int j=0; j<2; j++)
-		cout<<Borrower[j]<<"\t"<<BorrowDate[j]<<endl;
+	for( int j=0; j < NoOfCopies-CopiesAvailable; j++)
+	{
+		cout<<"Student borrowers : \n";
+		Borrower[j].Print();
+		cout<<"On Date : \n";
+		BorrowDate[j].readDate();
+	}
 }// end function PrintInfo
 
 
