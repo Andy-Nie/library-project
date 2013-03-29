@@ -17,8 +17,17 @@ Student::Student( int i, string nam, string dep )
 }// end Student constructor
 
 
+//############################
+Student::Student( )
+{
+	setID();
+	setName( "" );
+	setDeparName( "" );
+	NoOfBorrowedBooks=0;
+}// end Student constructor
+//############################
 
-void Student::setID(int i)
+void Student::setID( int i )
 {
 	if(ID==0)
 		while(ID=0)
@@ -67,11 +76,17 @@ void Student::AddStudent(  )
 
 }// end ADD function
 
-// start Increament fuction
-void Student::Increament( )
+// start Increment fuction
+void Student::Increment( )
 {
-	NoOfBorrowedBooks+=1;
-}// end 
+	NoOfBorrowedBooks++;
+}// end  Increment fuction
+
+// start Decrement function
+void Student::Decrement( )
+{ 
+	NoOfBorrowedBooks--;
+}// end Decrement function
 
 // start Print fuction
 void Student::Print( )
