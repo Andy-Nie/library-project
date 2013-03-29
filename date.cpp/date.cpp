@@ -20,7 +20,7 @@ void Date::setDate( int d, int m, int y )
 
 void Date::setDay( int d )
 {
-	day = ( d < 1 && d <= 32 ) ? 1 : checkDay( d );
+	day = ( d < 1 || d >= 32 ) ? 1 : checkDay( d );
 }// end function setDay
 
 void Date::setMonth( int m )
@@ -48,9 +48,23 @@ int Date::getYear()
 	return year; // return year value
 }// end function getYear
 
+void Date::readDate(){
+	int dd, mo, yea;
+
+	cout<<"Enter the Day : \n";
+	cin>>dd;
+	setDay( dd );
+	cout<<"Enter the Month : \n";
+	cin>>mo;
+	setMonth( mo );
+	cout<<"Enter the Year : \n";
+	cin>>yea;
+	setYear( yea );
+}// end function readDate
+
 // confirming proper day value based on month, year and handles leap years, too
-int Date::checkDay( int testday ) const
-{
+int Date::checkDay( int testday ) const{
+
 	static const int daysPerMonth[ monthsPerYear+1 ] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 	// determine whether testday is valid for specified moth
@@ -65,7 +79,7 @@ int Date::checkDay( int testday ) const
 // print Date ( dd/mm/yy ) format
 void Date::printDate()
 {
-	cout<<setfill('0')<<setw(2)<<getDay()<<"/"<<setw(2)<<getMonth()<<"/"<<setw(4)<<getYear();
+	cout<<"You Bowrowed The Book On  "<<setfill('0')<<setw(2)<<getDay()<<"/"<<setw(2)<<getMonth()<<"/"<<setw(4)<<getYear();
 }// end function printDate
 
 
