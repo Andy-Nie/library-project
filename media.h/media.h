@@ -10,20 +10,21 @@
 class Media
 {
 public:
-	Media();
-	Media(string,string,int,Student[],Date[]);
-	void Borrow(void); 
-	void Return(void);
+	Media(void); // defualt constructor
+	Media(string ,string);
+	Media(string,string,int,Student[],Date[]); // constructor with parameter
+	void Borrow(Student &, Date & ); 
+	void Return(Student &s);
 	void PrintInfo(void);// displays all information
 
-private:
+private:// datamembers
 	string name;
 	string ISBN;
 	const int NoOfCopies;
 	int CopiesAvailable;
 	Student Borrower[2];
 	Date BorrowDate[2];
-	void setCopiesAvailable(int );
+
 };//end class Media
 
 #endif
