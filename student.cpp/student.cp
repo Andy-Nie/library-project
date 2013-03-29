@@ -17,16 +17,6 @@ Student::Student( int i, string nam, string dep )
 }// end Student constructor
 
 
-//############################
-Student::Student( )
-{
-	setID();
-	setName( "" );
-	setDeparName( "" );
-	NoOfBorrowedBooks=0;
-}// end Student constructor
-//############################
-
 void Student::setID( int i )
 {
 	if(ID==0)
