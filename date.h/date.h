@@ -24,13 +24,14 @@ public:
 	int getMonth(); //return Moth
 	int getYear(); //return Year
 
+	void readDate();//Read date values from the user 
 	void printDate();// output Date Information
 
 private:
 	int day; // 1-31 based on month
 	int month; // 1-12
 	int year; // any year
-	int checkDay( int ) const ;// utility function to check if day is proper for month & year
+	int checkDay( int ) const; // utility function to check if day is proper for month & year
 
 };//end class Date
 
